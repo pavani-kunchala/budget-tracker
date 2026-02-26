@@ -1,0 +1,32 @@
+<h2>Expenses</h2>
+<p>
+  <!-- Add Expense -->
+  <a routerLink="/dashboard/expense/new" class="btn-primary">+ Add Expense</a>
+</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Amount</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let it of items">
+      <td>{{ it.category }}</td>
+      <td>{{ it.description }}</td>
+      <td>{{ it.date | date:'mediumDate' }}</td>
+      <td>${{ it.amount }}</td>
+
+      <td class="actions" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-start;">
+        <!-- Edit Expense -->
+        <a [routerLink]="['/dashboard/expense/edit', it.id]" class="btn-ghost">Edit</a>
+        
+        <button class="btn-ghost" (click)="delete(it.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

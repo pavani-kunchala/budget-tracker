@@ -1,0 +1,81 @@
+<div class="dashboard-grid">
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="icon">💼</div>
+      <div>
+        <div class="value">${{ totals.income - totals.expense | number:'1.0-0' }}</div>
+        <div class="label">Budget</div>
+      </div>
+    </div>
+ 
+    <div class="kpi">
+      <div class="icon">💳</div>
+      <div>
+        <div class="value">${{ totals.expense | number:'1.0-0' }}</div>
+        <div class="label">Expenses</div>
+      </div>
+    </div>
+ 
+    <div class="kpi">
+      <div class="icon">💲</div>
+      <div>
+        <div class="value">${{ totals.balance | number:'1.0-0' }}</div>
+        <div class="label">Balance</div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="filters">
+    <label>From Date <input class="input-date" type="date" [(ngModel)]="fromDate"></label>
+    <label>To Date <input class="input-date" type="date" [(ngModel)]="toDate"></label>
+    <button class="btn-primary" (click)="filter()">Search</button>
+    <button class="btn-ghost" (click)="refresh()">Reset</button>
+  </div>
+ 
+  <div class="columns">
+     <div class="col">
+      <h4>Category Wise Expense</h4>
+      <div *ngFor="let c of categoryList(); let i = index" class="list-card">
+         <div class="left">
+           <div class="badge">{{ i + 1 }}</div>
+        <div>{{ c.category }}</div>
+      </div>
+     <div>${{ c.total }}</div>
+    </div>
+   </div>
+
+ 
+    <div class="col">
+      <h4>Month Wise Expense</h4>
+      <div *ngFor="let m of monthList()" class="list-card"  >
+        <div style="color: #2a7ae4;">{{m.month}}</div>
+        <div>${{m.total}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="charts-grid">
+ 
+  <!-- Doughnut Chart Card -->
+  <div class="chart-card">
+    <h3>Income vs Expense</h3>
+    <canvas #doughnutChart></canvas>
+  </div>
+ 
+  <!-- Line Chart Card -->
+  <div class="chart-card">
+    <h3>Monthly Expense Trend</h3>
+    <canvas #lineChart></canvas>
+  </div>
+ 
+  <!-- Bar Chart Card -->
+  <div class="chart-card">
+    <h3>Category Distribution</h3>
+    <canvas #barChart></canvas>
+  </div>
+ 
+</div>
+ 
+
+ 

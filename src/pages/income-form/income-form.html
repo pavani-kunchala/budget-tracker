@@ -1,0 +1,24 @@
+<h2 class="form-title">{{ id ? 'Edit' : 'New' }} Expense</h2>
+
+<div class="expense-form">
+  <div class="form-row">
+    <label>Category</label>
+    <input [(ngModel)]="category" />
+  </div>
+  <div class="form-row">
+    <label>Description</label>
+    <input [(ngModel)]="description" />
+  </div>
+  <div class="form-row">
+    <label>Amount</label>
+    <input type="number" [(ngModel)]="amount" />
+  </div>
+  <div class="form-row">
+    <label>Date</label>
+    <input type="date" [(ngModel)]="date" />
+  </div>
+  <div class="form-actions">
+    <button class="btn-primary" (click)="save()">Save</button>
+     <button class="btn-secondary" (click)="cancel()">Cancel</button>
+  </div>
+</div>

@@ -1,0 +1,227 @@
+h4{margin-top:0;margin-bottom:10px;color:#333}
+
+ /* General layout */
+.dashboard-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: #f9f9fb; /* light neutral background */
+  min-height: 50vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+ 
+/* KPI row */
+.kpi-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+ 
+.kpi {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+ 
+.kpi:hover {
+  transform: translateY(-3px);
+}
+ 
+.kpi .icon {
+  font-size: 1.8rem;
+}
+ 
+.kpi .value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2a7ae4; /* modern blue accent */
+}
+ 
+.kpi .label {
+  font-size: 0.9rem;
+  color: #666;
+}
+ 
+/* Filters */
+.filters {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+ 
+.filters label {
+  color: #333;
+  font-size: 0.9rem;
+}
+ 
+.input-date {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  background: #fff;
+  color: #333;
+}
+ 
+.btn-primary {
+  background: #2a7ae4;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+ 
+.btn-primary:hover {
+  background: #1f5bb5;
+}
+ 
+.btn-ghost {
+  background: transparent;
+  color: #2a7ae4;
+  border: 1px solid #2a7ae4;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+ 
+.btn-ghost:hover {
+  background: #2a7ae4;
+  color: #fff;
+}
+ 
+ /* Columns container */
+.columns {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Each column card */
+.col {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  background: #ffffff; /* clean white card */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.col:hover {
+  transform: translateY(-3px);
+}
+
+/* Headings */
+.col h4 {
+  margin: 0 0 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  color: #2a2a2a;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* List cards */
+.list-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f9fc; /* light neutral background */
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.list-card:hover {
+  background: #e9eef5;
+  transform: translateY(-2px);
+}
+
+.list-card div {
+  font-size: 1rem;
+  font-weight: 500;
+   color: #333;
+}
+
+.list-card div:last-child {
+  font-weight: 600;
+  color: #2a7ae4; /* modern blue accent for amounts */
+}
+
+/* Badge */
+.badge {
+  background: #2a7ae4;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Left section alignment */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* Neon Gradient Background */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+ 
+/* Neon Chart Cards */
+.chart-card {
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,255,200,0.2),
+              0 0 40px rgba(0,150,255,0.15);
+  border: 1px solid rgba(0,255,255,0.2);
+  transition: 0.3s ease;
+}
+ 
+.chart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0,255,200,0.35),
+              0 0 50px rgba(0,150,255,0.35);
+}
+ 
+.chart-card h3 {
+  color: #00eaff;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+ 
+/* Canvas Control */
+.chart-card canvas {
+  width: 280px !important;
+  height: 230px !important;
+  margin: auto;
+  display: block;
+}
